@@ -29,14 +29,14 @@ public partial class UpdateHandler: IUpdateHandler
             ]
             
         ]);
-        if (update.Message.Text is {} message)
+        if (update.Message.Text is { } message)
         {
-            var messageMassive = message.Split(' ');
-            
-            Message sentMessage = await (messageMassive[0] switch
+
+            Message sentMessage = await (message.Split(" ")[0] switch
             {
-                "/start" => SendMessage(update.Message),
+                "/start" => SendWelcomeMessage(update.Message),
                 "/search" => SearchSong(update.Message),
+                _ => throw new ArgumentOutOfRangeException()
             });
             
             _logger.LogInformation($"message was sent from: {sentMessage.From.Id}");
@@ -49,15 +49,5 @@ public partial class UpdateHandler: IUpdateHandler
         
         return Task.CompletedTask;
     }
-
-    public async Task<Message> SendMessage(Message message)
-    {
-        
-        return await _botClient.SendMessage(message.Chat.Id, $"ищу по запросу", replyParameters: message.Id);
-    } 
-    public async Task<Message> SendMessage(Message message, string MusicName)
-    {
-        
-        return await _botClient.SendMessage(message.Chat.Id, $"ищу по запросу", replyParameters: message.Id);
-    } 
+    
 }
