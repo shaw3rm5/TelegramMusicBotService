@@ -10,7 +10,7 @@ public class TelegramToken
         _configuration = configuration;
     }
     
-    public string ReturnToken()
+    public string GetToken()
     {
         return _configuration["MyBotSettings:BotToken"]!;
     }

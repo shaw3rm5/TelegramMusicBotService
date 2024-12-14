@@ -9,26 +9,25 @@ namespace TelegramMusicBotService.Logic;
 public partial class UpdateHandler
 {
 
-    private static string[] WelcomeMessage =
-    {
-        "<h1>Welcome to Music Bot!</h1>",
-        "<p>Here you can find all music from Spotify.</p>",
-        "<h2>I have 5 commands:</h2>",
-        "<ul>",
-        "  <li><b>/start</b></li>",
-        "  <li><b>/search</b> &lt;'name'&gt; or &lt;link&gt;</li>",
-        "  <li><b>/createPlaylist</b> &lt;playlist name&gt;</li>",
-        "  <li><b>/deletePlaylist</b> &lt;playlist name&gt;</li>",
-        "  <li><b>/addSong</b> &lt;playlist&gt; &lt;link&gt;</li>",
-        "</ul>",
-        "<p><i>Remember, all songs are in the Spotify area!</i></p>",
-    };
 
-    private string combinedMessage = string.Join("\n", WelcomeMessage);
-        
-        
+    private static readonly string WelcomeMessage = 
+        """
+        Welcome to Music Bot!
+        Here you can find all music from Spotify.
+        I have 5 commands:
+        /start
+        /search <name> or <link>
+        /createPlaylist <playlist name>
+        /deletePlaylist <playlist name>
+        /addSong <playlist> <link>
+        Remember, all songs are in the Spotify area!                                    
+        """;
+    
     public async Task<Message> SendWelcomeMessage(Message message)
     {
-        return await _botClient.SendMessage(message.From.Id, text: combinedMessage, ParseMode.Html );
+        Console.WriteLine(WelcomeMessage);
+        return await _botClient.SendMessage(
+            chatId:message.From.Id, 
+            text: WelcomeMessage);
     }
 }

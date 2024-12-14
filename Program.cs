@@ -18,7 +18,7 @@ public class Program
         services.AddSingleton<TelegramToken>();
         services.AddSingleton<ITelegramBotClient, TelegramBotClient>(sp =>
         {
-            var botToken = sp.GetRequiredService<TelegramToken>().ReturnToken();
+            var botToken = sp.GetRequiredService<TelegramToken>().GetToken();
             return new TelegramBotClient(botToken);
         });
         services.AddTransient<UpdateHandler>();
