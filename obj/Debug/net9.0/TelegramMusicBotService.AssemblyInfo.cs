@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TelegramMusicBotService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1cfc7332f5e6dc16ea7cbc84276b81cdbb106e9a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1ca440707277ead69358332089df313412eaf796")]
 [assembly: System.Reflection.AssemblyProductAttribute("TelegramMusicBotService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TelegramMusicBotService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

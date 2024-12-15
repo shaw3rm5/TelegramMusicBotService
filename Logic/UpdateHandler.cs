@@ -1,7 +1,8 @@
-﻿using Telegram.Bot;
+﻿using SpotifyExplode;
+using Telegram.Bot;
 using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
-using Telegram.Bot.Types.ReplyMarkups;
+using File = System.IO.File;
 
 namespace TelegramMusicBotService.Logic;
 
@@ -9,7 +10,7 @@ public partial class UpdateHandler: IUpdateHandler
 {
     private readonly ITelegramBotClient _botClient;
     private readonly ILogger _logger;
-
+    private readonly SpotifyDownloader _spotifyDownloader = new(); 
     public UpdateHandler(ITelegramBotClient botClient, ILogger logger)
     {
         _botClient = botClient;
@@ -39,9 +40,10 @@ public partial class UpdateHandler: IUpdateHandler
     {
         
         var commandText = message.Text.Split(' ');
-        var songSegment = new ArraySegment<string>(
-                commandText, 1, 
-                commandText.Length - 1).ToArray();
+        var songSegment = new ArraySegment<String>(
+                    array: commandText,
+                    offset: 1,
+                    count: commandText.Length - 1).ToArray();
         
         
         Message sentMessage = await (commandText[0] switch
@@ -68,12 +70,22 @@ public partial class UpdateHandler: IUpdateHandler
         
         //idea: realise "add to playlist" button when song is sent 
         
+        await _botClient.AnswerCallbackQueryAsync(callbackQuery.Id);
+
+        _spotifyDownloader.SetDownloadUrl(
+            await new SpotifyClient().Tracks.GetDownloadUrlAsync(musicUrl)
+            );
         
-        await _botClient.AnswerCallbackQueryAsync(
-            callbackQuery.Id
-        );
+        using var song = File.OpenRead(await _spotifyDownloader.DownloadFileAsync());
+        using var songImage = File.OpenRead(_spotifyDownloader.ExtractAndSaveCover());
         
-        await _botClient.SendMessage(callbackQuery.From.Id, "music will be soon...");
+        
+        await _botClient.SendAudio(
+            callbackQuery.From.Id,
+            audio: new InputFileStream(song),
+            caption: "Music",
+            thumbnail: new InputFileStream(songImage)
+            );
         
     }
     

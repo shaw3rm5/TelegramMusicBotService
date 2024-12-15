@@ -19,3 +19,4 @@ D:\aspnet\TelegramMusicBotService\TelegramMusicBotService\obj\Debug\net9.0\Teleg
 D:\aspnet\TelegramMusicBotService\TelegramMusicBotService\obj\Debug\net9.0\ref\TelegramMusicBotService.dll
 D:\aspnet\TelegramMusicBotService\TelegramMusicBotService\bin\Debug\net9.0\Config\secrets.json
 D:\aspnet\TelegramMusicBotService\TelegramMusicBotService\obj\Debug\net9.0\TelegramMusicBotService.sourcelink.json
+D:\aspnet\TelegramMusicBotService\TelegramMusicBotService\bin\Debug\net9.0\TagLibSharp.dll

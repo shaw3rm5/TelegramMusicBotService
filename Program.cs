@@ -14,14 +14,16 @@ public class Program
         
         
         var services = builder.Services;
-        services.AddTransient<ILogger, Logger<Program>>();
         services.AddSingleton<TelegramToken>();
         services.AddSingleton<ITelegramBotClient, TelegramBotClient>(sp =>
         {
             var botToken = sp.GetRequiredService<TelegramToken>().GetToken();
             return new TelegramBotClient(botToken);
         });
+        
+        services.AddTransient<ILogger, Logger<Program>>();
         services.AddTransient<UpdateHandler>();
+        
         services.AddHostedService<BotService>();
 
         

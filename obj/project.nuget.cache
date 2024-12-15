@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "W48NDtcpzd4=",
+  "dgSpecHash": "PIZc1iYYGQY=",
   "success": true,
   "projectFilePath": "D:\\aspnet\\TelegramMusicBotService\\TelegramMusicBotService\\TelegramMusicBotService.csproj",
   "expectedPackageFiles": [
@@ -35,6 +35,7 @@
     "C:\\Users\\Giorgi Gorgiladze\\.nuget\\packages\\spotifyexplode\\1.1.2\\spotifyexplode.1.1.2.nupkg.sha512",
     "C:\\Users\\Giorgi Gorgiladze\\.nuget\\packages\\system.diagnostics.eventlog\\9.0.0\\system.diagnostics.eventlog.9.0.0.nupkg.sha512",
     "C:\\Users\\Giorgi Gorgiladze\\.nuget\\packages\\system.text.json\\8.0.5\\system.text.json.8.0.5.nupkg.sha512",
+    "C:\\Users\\Giorgi Gorgiladze\\.nuget\\packages\\taglibsharp\\2.3.0\\taglibsharp.2.3.0.nupkg.sha512",
     "C:\\Users\\Giorgi Gorgiladze\\.nuget\\packages\\telegram.bot\\22.2.0\\telegram.bot.22.2.0.nupkg.sha512"
   ],
   "logs": []

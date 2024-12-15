@@ -649,6 +649,19 @@
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
       },
+      "TagLibSharp/2.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/TagLibSharp.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/TagLibSharp.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
       "Telegram.Bot/22.2.0": {
         "type": "package",
         "dependencies": {
@@ -1690,6 +1703,23 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "TagLibSharp/2.3.0": {
+      "sha512": "Qo4z6ZjnIfbR3Us1Za5M2vQ97OWZPmODvVmepxZ8XW0UIVLGdO2T63/N3b23kCcyiwuIe0TQvMEQG8wUCCD1mA==",
+      "type": "package",
+      "path": "taglibsharp/2.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/TagLibSharp.dll",
+        "lib/net462/TagLibSharp.pdb",
+        "lib/net462/TaglibSharp.xml",
+        "lib/netstandard2.0/TagLibSharp.dll",
+        "lib/netstandard2.0/TagLibSharp.pdb",
+        "lib/netstandard2.0/TaglibSharp.xml",
+        "taglibsharp.2.3.0.nupkg.sha512",
+        "taglibsharp.nuspec"
+      ]
+    },
     "Telegram.Bot/22.2.0": {
       "sha512": "Ff4K8dtREbEGHRN500b/tDPHXouh0d0+X4aZqVyC9So1u66gn7Il6miqBgurDwDASSx10LMN9cJRidwf+fgXoQ==",
       "type": "package",
@@ -1715,6 +1745,7 @@
       "Microsoft.Extensions.Configuration.Json >= 9.0.0",
       "Microsoft.Extensions.Hosting >= 9.0.0",
       "SpotifyExplode >= 1.1.2",
+      "TagLibSharp >= 2.3.0",
       "Telegram.Bot >= 22.2.0"
     ]
   },
@@ -1774,6 +1805,10 @@
           "SpotifyExplode": {
             "target": "Package",
             "version": "[1.1.2, )"
+          },
+          "TagLibSharp": {
+            "target": "Package",
+            "version": "[2.3.0, )"
           },
           "Telegram.Bot": {
             "target": "Package",

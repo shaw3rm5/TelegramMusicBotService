@@ -58,6 +58,10 @@
               "target": "Package",
               "version": "[1.1.2, )"
             },
+            "TagLibSharp": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
             "Telegram.Bot": {
               "target": "Package",
               "version": "[22.2.0, )"

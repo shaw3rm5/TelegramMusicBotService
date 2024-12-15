@@ -22,7 +22,8 @@ public partial class UpdateHandler
         InlineKeyboardMarkup GenerateSongsKeyboard(List<TrackSearchResult> Songs)
         {
             var buttons = Songs
-                .Select(song => InlineKeyboardButton.WithCallbackData($"{song.Title}", $"download_{song.Url}"))
+                .Select(song => InlineKeyboardButton.WithCallbackData(
+                    $"{string.Join(", ", song.Artists.Select(a => a.Name))} - {song.Title}", $"download_{song.Url}"))
                 .Chunk(1)
                 .Select(chunk => chunk.ToArray())
                 .ToArray();

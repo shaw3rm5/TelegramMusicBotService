@@ -11,6 +11,11 @@
         <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.0" />
         <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0"/>
         <PackageReference Include="SpotifyExplode" Version="1.1.2" />
+        <PackageReference Include="TagLibSharp" Version="2.3.0" />
         <PackageReference Include="Telegram.Bot" Version="22.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="musicBuffer\" />
     </ItemGroup>
 </Project>
